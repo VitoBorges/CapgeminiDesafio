@@ -16,12 +16,14 @@ public class Anagrama {
 		System.out.print("Digite 1: ");
 		word = scanner.nextLine();
 
-		getWordFrag(word);
+		result += getWordFrag(word);
 
 		System.out.println(result);
 	}
 
-	public static void getWordFrag(String word) {
+	public Integer getWordFrag(String word) {
+		
+		Integer count = 0;
 
 		int wordSize = word.length();
 
@@ -31,12 +33,16 @@ public class Anagrama {
 
 				String wordFrag = word.substring(i, i + j);
 
-				commute(word, wordFrag, i);
+				count += commute(word, wordFrag, i);
 			}
 		}
+		return count;
 	}
 
-	public static void commute(String word, String wordFrag, int i) {
+	public Integer commute(String word, String wordFrag, int i) {
+		
+		Integer countCommut = 0;
+		
 		char[] wordFragChar = wordFrag.toCharArray();
 		Arrays.sort(wordFragChar);
 
@@ -46,9 +52,10 @@ public class Anagrama {
 			Arrays.sort(wordChar);
 
 			if (Arrays.equals(wordFragChar, wordChar)) {
-				result++;
+				countCommut++;
 			}
 		}
+		return countCommut;
 	}
 
 }

@@ -5,21 +5,22 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Senha {
-
+	
 	public static String password = " ";
-	public static Integer resultDig = 0;
-	public static Integer resultSize = 0;
 	
 	static Scanner scanner = new Scanner(System.in);
 
 	public void start() {
+		
+		Integer resultDig = 0;
+		Integer resultSize = 0;
 
 		consolePass();
-		verifySize(password);
-		verifyDigit(password);
-		verifyUpperCase(password);
-		verifyLowCase(password);
-		verifyCharacter(password);
+		resultSize = verifySize(password);
+		resultDig = verifyDigit(password);
+		resultDig += verifyUpperCase(password);
+		resultDig += verifyLowCase(password);
+		resultDig += verifyCharacter(password);
 
 		if (resultSize < 1 && resultDig < 1) {
 			System.out.println("Sua senha é forte");
@@ -35,58 +36,62 @@ public class Senha {
 		System.out.print("Digite a senha: ");
 		password = scanner.nextLine();
 		
-
 	}
 
-	public static void verifySize(String password) {
+	public Integer verifySize(String password) {
 
 		if (password.length() < 6) {
-			resultSize = 6 - password.length();
+			return 6 - password.length();
 		}
+		return 0;
 
 	}
 
-	public static void verifyDigit(String password) {
+	public Integer verifyDigit(String password) {
 
 		Pattern pattern = Pattern.compile("[0-9]");
 		Matcher matcher = pattern.matcher(password);
 
 		if (!matcher.find()) {
-			resultDig++;
+			return 1;
 		}
+		return 0;
 
 	}
 
-	public static void verifyUpperCase(String password) {
+	public Integer verifyUpperCase(String password) {
 
 		Pattern pattern = Pattern.compile("[A-Z]");
 		Matcher matcher = pattern.matcher(password);
 
 		if (!matcher.find()) {
-			resultDig++;
+			return 1;
 		}
+		return 0;
 
 	}
 
-	public static void verifyLowCase(String password) {
+	public Integer verifyLowCase(String password) {
 
 		Pattern pattern = Pattern.compile("[a-z]");
 		Matcher matcher = pattern.matcher(password);
 
 		if (!matcher.find()) {
-			resultDig++;
+			return 1;
 		}
+		return 0;
 
 	}
 
-	public static void verifyCharacter(String password) {
+	public Integer verifyCharacter(String password) {
 
 		Pattern pattern = Pattern.compile("[!@#$%^&*()-+]");
 		Matcher matcher = pattern.matcher(password);
 
 		if (!matcher.find()) {
-			resultDig++;
+			return 1;
 		}
+		return 0;
 
 	}
 

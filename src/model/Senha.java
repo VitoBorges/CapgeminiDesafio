@@ -9,6 +9,8 @@ public class Senha {
 	public static String password = " ";
 	public static Integer resultDig = 0;
 	public static Integer resultSize = 0;
+	
+	static Scanner scanner = new Scanner(System.in);
 
 	public void start() {
 
@@ -28,12 +30,11 @@ public class Senha {
 	}
 
 	public static void consolePass() {
-
-		Scanner scanner = new Scanner(System.in);
 		
+		System.out.println();
 		System.out.print("Digite a senha: ");
 		password = scanner.nextLine();
-		scanner.close();
+		
 
 	}
 

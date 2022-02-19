@@ -7,14 +7,14 @@ public class Anagrama {
 
 	public static String word;
 	public static Integer result = 0;
+	
+	Scanner scanner = new Scanner(System.in);
 
 	public void start() {
-
-		Scanner scanner = new Scanner(System.in);
-
+		
+		System.out.println();
 		System.out.print("Digite 1: ");
 		word = scanner.nextLine();
-		scanner.close();
 
 		getWordFrag(word);
 

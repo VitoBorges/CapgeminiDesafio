@@ -6,11 +6,12 @@ import java.util.Scanner;
 public class Anagrama {
 
 	public static String word;
-	public static Integer result = 0;
 
 	Scanner scanner = new Scanner(System.in);
 
 	public void start() {
+		
+		Integer result = 0;
 
 		System.out.println();
 		System.out.print("Digite uma palavra: ");

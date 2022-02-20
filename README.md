@@ -4,7 +4,6 @@ Este é um projeto eleborado para atender o desafio proposto pela Academia Capge
 
 ## Tecnologias:
 
----
 
 - Linguagem Java utilzando a versão JRE11
 - JUnit 5 Framework para elaboração dos testes unitários
@@ -12,7 +11,6 @@ Este é um projeto eleborado para atender o desafio proposto pela Academia Capge
 
 ## Rodar o Projeto:
 
----
 
 - Git clone https://github.com/VitoBorges/CapgeminiDesafio.git
 - Faça a importação do projeto para IDE
